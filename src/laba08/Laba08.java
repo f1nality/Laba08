@@ -20,17 +20,18 @@ public class Laba08 {
      */
     public static void main(String[] args) {
         MainWindow.setSystemLookAndFeel();
-        MainWindow mainwindow = new MainWindow();
         
         try {
             db = new DB();
+            
+            MainWindow mainwindow = new MainWindow();
             mainwindow.refreshAccounts();
+            mainwindow.setVisible(true);
         } catch (ClassNotFoundException ex) {
             System.out.println(ex.getMessage());
         } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
+            //System.out.println(ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Ошибка запроса");
         }
-        
-        mainwindow.setVisible(true);
     }
 }

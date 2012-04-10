@@ -98,7 +98,8 @@ public class MainWindow extends JFrame {
             addAccounts(accounts);
             accountsInfo.setText("Всего счетов: " + accounts.length);
         } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
+            //System.out.println(ex.getMessage());
+            JOptionPane.showMessageDialog(this, "Ошибка запроса");
         }
         
         accountsPane.validate();
